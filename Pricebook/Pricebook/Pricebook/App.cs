@@ -23,6 +23,15 @@ namespace Pricebook {
       //};
 
 
+      var CSV_INVMAS = Pricebook.Properties.Resources.INVMAS;
+
+
+      var Test = new System.IO.StringReader(CSV_INVMAS);
+
+      var csv = new CsvHelper.CsvReader(Test);
+      var Records = csv.GetRecords<Database.INVMAS>();
+      var Final = Records.ToList();
+
       var content = new Views.Home();
 
       MainPage = new NavigationPage(content);

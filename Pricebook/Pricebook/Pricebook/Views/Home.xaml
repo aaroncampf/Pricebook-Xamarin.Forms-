@@ -4,4 +4,8 @@
 						 x:Class="Pricebook.Views.Home"
 						 x:Name ="cpMain">
 	<Label x:Name ="txtTest" Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+
+<DataGrid ItemsSource="{Binding Customers}" />
+
+
 </ContentPage>
