@@ -29,8 +29,22 @@ namespace Pricebook {
       var Test = new System.IO.StringReader(CSV_INVMAS);
 
       var csv = new CsvHelper.CsvReader(Test);
+      csv.Configuration.RegisterClassMap<Database.INVMAS_Mapper>();
       var Records = csv.GetRecords<Database.INVMAS>();
+
+
+
+      /*
+      for (int i = 0; i < 3274; i++) {
+        Records.Skip(1).Take(1).ToList();
+      }
+      */
       var Final = Records.ToList();
+      foreach (var item in Final) {
+        var sgsgsgsg = DateTime.Parse(item.LASTDATE ?? DateTime.MaxValue.ToString());
+      }
+
+
 
       var content = new Views.Home();
 
