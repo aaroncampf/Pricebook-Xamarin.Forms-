@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Pricebook.Database {
-  class INVMAS {
+  public class INVMAS {
 
     public string ITEMNO { get; set; }
     public string CATG { get; set; }
@@ -14,45 +14,27 @@ namespace Pricebook.Database {
     public string DESCRIP { get; set; }
     public string DESCRIP2 { get; set; }
     public string DESCRIP3 { get; set; }
-
-
-
-    public double W_AVG_COST { get; set; }
-    public double LINECOST { get; set; }
-    public double DEADNET { get; set; }
-    public double LOADEDCOST { get; set; }
-    public short ONORDER { get; set; }
-    public int ORDERQTY { get; set; }
+    public string W_AVG_COST { get; set; }
+    public string LINECOST { get; set; }
+    public string DEADNET { get; set; }
+    public string LOADEDCOST { get; set; }
+    public string ONORDER { get; set; }
+    public string ORDERQTY { get; set; }
     public string VENDORID { get; set; }
     public string VENDORITEM { get; set; }
-    public int DELIV_DAYS { get; set; }
-    public int DAYS_OH { get; set; }
-    public int FLAG_PDAYS { get; set; }
-
-
-
-    ////public DateTime LASTDATE { get; set; }
-
+    public string DELIV_DAYS { get; set; }
+    public string DAYS_OH { get; set; }
+    public string FLAG_PDAYS { get; set; }
     public string LASTDATE { get; set; }
-
-
-
     public string WHSE_LOC { get; set; }
     public string WHSE_BIN { get; set; }
     public string RTDESC1 { get; set; }
     public string RTDESC2 { get; set; }
-
-
-    public int SELLROUND { get; set; }
-
+    public string SELLROUND { get; set; }
     public string SELLUOM { get; set; }
     public string BUY_UOM { get; set; }
     public string ITEMSTATUS { get; set; }
-
-
-    public int PRBK_SEQ { get; set; }
-
-
+    public string PRBK_SEQ { get; set; }
     public string SELL_CALC1 { get; set; }
     public string SELL_CALC2 { get; set; }
     public string SELL_CALC3 { get; set; }
@@ -66,7 +48,6 @@ namespace Pricebook.Database {
 
     public static string SQLQuery() {
       return @"
-SELECT 
 SELECT 
 [ITEMNO]
 ,[CATG]
