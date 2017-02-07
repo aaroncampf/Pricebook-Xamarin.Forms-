@@ -1,11 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
 						 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+						 xmlns:dg="clr-namespace:Xamarin.Forms.DataGrid;assembly=Xamarin.Forms.DataGrid"
 						 x:Class="Pricebook.Views.Home"
 						 x:Name ="cpMain">
 
 
-	<ListView x:Name="listView">
+
+	<Label Text="Add customers in a new tab (make this tabbed)" />
+	
+
+	<dg:DataGrid x:Name="gridTest" ItemsSource="{Binding INVMAS_Table}" SelectionEnabled="True" ItemSelected="GridTest_ItemSelected">
+		<dg:DataGrid.Columns>
+			<dg:DataGridColumn Title="ITEMNO" PropertyName="ITEMNO" Width="65" x:Name="Test" />
+			<dg:DataGridColumn Title="DESCRIP" PropertyName="DESCRIP" Width="*" />
+		</dg:DataGrid.Columns>
+	</dg:DataGrid>
+
+
+
+
+
+
+
+
+
+
+
+	<!--<ListView x:Name="listView" ItemsSource="{Binding INVMAS_Table}>
 		<ListView.ItemTemplate>
 			<DataTemplate>
 				<ViewCell>
@@ -24,6 +46,6 @@
 				</ViewCell>
 			</DataTemplate>
 		</ListView.ItemTemplate>
-	</ListView>
+	</ListView>-->
 
 </ContentPage>

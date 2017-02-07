@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pricebook.Views.ProductPage">
+
+
+	<StackLayout>
+		<Label Text="Special pricing will be added in a future release" />
+		<Label Text="Special pricing will be added in a future release" />
+		<Label Text="Test" />
+		<Entry Text="Entry dhdhd" />
+	</StackLayout>
+
+
+
+	<!--<TableView>
+		<TableRoot>
+			<TableSection Title="ITEMNO">
+				<EntryCell Text="Test" />
+			</TableSection>
+
+			<TableSection Title="ITEMNO">
+				<EntryCell Text="SelectedProduct.ITEMNO" />
+			</TableSection>
+
+			<TableSection Title="Ring">
+				<SwitchCell Text="New Voice Mail" />
+				<SwitchCell Text="New Mail" On="true" />
+			</TableSection>
+		</TableRoot>
+	</TableView>-->
+</ContentPage>
