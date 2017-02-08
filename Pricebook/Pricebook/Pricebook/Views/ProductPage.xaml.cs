@@ -8,11 +8,24 @@ using Xamarin.Forms;
 
 namespace Pricebook.Views {
   public partial class ProductPage : ContentPage {
-    public Database.INVMAS SelectedProduct { get; set; }
+    public Database.INVMAS SelectedProduct { get; private set; }
 
-    public ProductPage() {
+    public ProductPage(Database.INVMAS SelectedProduct ) {
       InitializeComponent();
       this.BindingContext = this;
+      this.SelectedProduct = SelectedProduct;
+
+      var htmlSource = new HtmlWebViewSource();
+      htmlSource.Html = $@"
+                          <h1>{SelectedProduct.DESCRIP}</h1>
+                          <p>ITEMNO: {SelectedProduct.ITEMNO}</p>
+";
+
+
+      webMain.Source = htmlSource;
     }
+
+
+
   }
 }

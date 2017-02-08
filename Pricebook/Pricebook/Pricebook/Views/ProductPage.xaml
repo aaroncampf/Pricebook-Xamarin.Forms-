@@ -13,6 +13,13 @@
 
 
 
+
+	<WebView x:Name="webMain">
+		
+	</WebView>	
+	
+
+
 	<!--<TableView>
 		<TableRoot>
 			<TableSection Title="ITEMNO">

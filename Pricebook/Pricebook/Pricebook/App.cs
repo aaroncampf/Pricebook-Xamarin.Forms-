@@ -23,8 +23,7 @@ namespace Pricebook {
       //};
 
 
-      var content = new Views.Home();
-
+      var content = new Views.TabsPage();
       MainPage = new NavigationPage(content);
     }
 

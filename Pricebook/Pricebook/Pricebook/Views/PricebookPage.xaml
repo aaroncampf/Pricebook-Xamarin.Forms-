@@ -2,12 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
 						 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 						 xmlns:dg="clr-namespace:Xamarin.Forms.DataGrid;assembly=Xamarin.Forms.DataGrid"
-						 x:Class="Pricebook.Views.Home"
+						 x:Class="Pricebook.Views.PricebookPage"
 						 x:Name ="cpMain">
 
 
 
+	
 	<Label Text="Add customers in a new tab (make this tabbed)" />
+	
+	
+	
+	
+	
 	
 
 	<dg:DataGrid x:Name="gridTest" ItemsSource="{Binding INVMAS_Table}" SelectionEnabled="True" ItemSelected="GridTest_ItemSelected">
@@ -18,10 +24,16 @@
 	</dg:DataGrid>
 
 
-
-
-
-
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 
