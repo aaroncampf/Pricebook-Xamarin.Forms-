@@ -9,7 +9,9 @@ using Xamarin.Forms;
 
 namespace Pricebook.Views {
   public partial class CustomersPage : ContentPage {
+    public ObservableCollection<Database.ARCUST> ARCUSTs_Full { get; private set; } = new ObservableCollection<Database.ARCUST>();
     public ObservableCollection<Database.ARCUST> ARCUSTs { get; private set; } = new ObservableCollection<Database.ARCUST>();
+
     public ObservableCollection<Database.ORDERFRM_Plus> ORDERFRM_Plus_Data { get; private set; } = new ObservableCollection<Database.ORDERFRM_Plus>();
 
 
@@ -19,6 +21,7 @@ namespace Pricebook.Views {
       Xamarin.Forms.DataGrid.DataGridComponent.Init();
 
       foreach (var item in new CsvHelper.CsvReader(new System.IO.StringReader(Properties.Resources.ARCUST)).GetRecords<Database.ARCUST>()) {
+        ARCUSTs_Full.Add(item);
         ARCUSTs.Add(item);
       }
 
@@ -32,6 +35,16 @@ namespace Pricebook.Views {
       Navigation.PushAsync(new CustomerPage(e.SelectedItem as Database.ARCUST, ORDERFRM_Plus_Data));
 
     }
+
+    private void txtFilter_TextChanged(object sender, TextChangedEventArgs e) {
+      INVMAS_Table.Clear();
+      var Items = INVMAS_Table_Full.Where(x => x.DESCRIP.ToLower().StartsWith(txtFilter.Text.ToLower()) || x.ITEMNO.ToString().ToLower().StartsWith(txtFilter.Text.ToLower()));
+
+      foreach (var item in Items) {
+        INVMAS_Table.Add(item);
+      }
+    }
+
 
   }
 }

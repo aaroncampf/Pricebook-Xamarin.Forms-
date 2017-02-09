@@ -6,14 +6,15 @@
 
 	<Label Text="Add Filtering" />
 
+	<StackLayout>
+		<dg:DataGrid x:Name="gridCustomers" ItemsSource="{Binding ARCUSTs}" SelectionEnabled="True" ItemSelected="gridCustomers_ItemSelected">
+			<dg:DataGrid.Columns>
+				<dg:DataGridColumn Title="CUSTNO" PropertyName="CUSTNO" Width="65" x:Name="Test" />
+				<dg:DataGridColumn Title="COMPANYNM" PropertyName="COMPANYNM" Width="*" />
+			</dg:DataGrid.Columns>
+		</dg:DataGrid>
 
-	<dg:DataGrid x:Name="gridCustomers" ItemsSource="{Binding ARCUSTs}" SelectionEnabled="True" ItemSelected="gridCustomers_ItemSelected">
-		<dg:DataGrid.Columns>
-			<dg:DataGridColumn Title="CUSTNO" PropertyName="CUSTNO" Width="65" x:Name="Test" />
-			<dg:DataGridColumn Title="COMPANYNM" PropertyName="COMPANYNM" Width="*" />
-		</dg:DataGrid.Columns>
-	</dg:DataGrid>
-
-
+		<SearchBar x:Name="txtFilter" TextChanged="txtFilter_TextChanged" Placeholder="Filter" />
+	</StackLayout>
 
 </ContentPage>

@@ -21,14 +21,14 @@ namespace Pricebook.Views {
       Xamarin.Forms.DataGrid.DataGridComponent.Init();
 
       var CSV_INVMAS = Properties.Resources.INVMAS;
-    
+
       foreach (var item in new CsvHelper.CsvReader(new System.IO.StringReader(CSV_INVMAS)).GetRecords<Database.INVMAS>()) {
         INVMAS_Table_Full.Add(item);
         INVMAS_Table.Add(item);
       }
 
-      var Test = txtfgfdsg.CellTemplate;
-      txtfgfdsg.HorizontalContentAlignment = new LayoutOptions(LayoutAlignment.Center, true);
+      //var Test = txtfgfdsg.CellTemplate;
+      //txtfgfdsg.HorizontalContentAlignment = new LayoutOptions(LayoutAlignment.Center, true);
     }
 
     private void txtFilter_TextChanged(object sender, TextChangedEventArgs e) {
