@@ -62,12 +62,42 @@ namespace Pricebook.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CUSTNO,COMPANYNM,ADDRESS1,CITY,STATE,Zip,PERSON,PHONE,FAX,EMAIL
+        ///50001,CASH SALES,ss,PORTLAND,OR,97214,NULL,(503)235-8341,NULL,NULL
+        ///50140,11TH AVE LIQUOR,1040 SE HAWTHORNE,PORTLAND,OR,97214,NULL,(503)236-2076,(503)236-2520,NULL
+        ///50200,39TH ST. MINI MART -WA,210 E 39TH STREET,VANCOUVER,WA,98663,NULL,(360)693-8411,NULL,NULL
+        ///50201,82ND GAS FOR LESS,5322 SE 82ND AVE.,PORTLAND,OR,97266,,(503)772-5353,,
+        ///50363,A1 SMOKESHOP,1590 SHERMAN AVENUE,NORTH BEND,OR,97459,,(541)808-0586,,
+        ///50500,ADVANCED MACHINING,117 N  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ARCUST {
+            get {
+                return ResourceManager.GetString("ARCUST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ITEMNO,CATG,GROUP,SUPERGROUP,DESCRIP,DESCRIP2,DESCRIP3,BUYUOMCOST,BUYUOMCOST2,W_AVG_COST,LINECOST,UNITFRGHT,DEADNET,COSTBASIS,LOADEDCOST,LOADGROUP,ONORDER,ORDERQTY,VENDORID,VENDORITEM,DELIV_DAYS,DAYS_OH,FLAG_PDAYS,LASTDATE,BACKORDTF,WHSE_LOC,WHSE_BIN,RTDESC1,RTDESC2,RTDESC3,RETAILUOM,RETAILVALU,SELLROUND,SELLUOM,BUY_UOM,ITEMSTATUS,PRBK_SEQ,DO_NOT_USE,SELL_CALC1,SELL_CALC2,SELL_CALC3,SELL_CALC4,SELL_CALC5,SELL_CALC6,SELL_CALC7,SELL_CALC8,SELL_CALC9
         ///4,G,G-99,DRUM CHARG,IMPRINT CHARGE FOR TUMBLER,1 COLOR,NULL [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string INVMAS {
             get {
                 return ResourceManager.GetString("INVMAS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ITEMNO,SHIPCUSTNO,LastSellNetnet,EntryDate,CATG,GROUP,DESCRIP,DESCRIP2,DESCRIP3
+        ///13494,74247,0,6/7/2005 0:00,P,P-11,MEDICLEAN,OMNI,NULL
+        ///13762,75103,68.65,1/2/2014 0:00,P,P-11C,9656 PURELL REFILL 800ML,INSTANT HAND SANITIZER,USE W/ 9621 DISP
+        ///13722,74247,0,7/27/2005 0:00,P,P-08,RINSE FREE STRIP,SPARTAN,NULL
+        ///14039,59560,0,12/28/2005 0:00,R,R-30,RENEP WAYLUBE 68,WAYLUBE FUCHS,SUB IS 13156-VACTRA 2
+        ///12692,54039,73.05,8/26/2014 0:00,N,N-11,3&apos;X10&apos; CHARCOAL MAT,AMERICO RIDGERUNNER,NULL
+        ///12693,54039,0,1/24/2006 0 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ORDERFRM_Plus {
+            get {
+                return ResourceManager.GetString("ORDERFRM_Plus", resourceCulture);
             }
         }
     }

@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 namespace Pricebook.Database {
   public class INVMAS {
 
-    public string ITEMNO { get; set; }
+    public int ITEMNO { get; set; }
+
+
     public string CATG { get; set; }
     public string GROUP { get; set; }
     public string SUPERGROUP { get; set; }
@@ -93,7 +95,6 @@ WHERE DO_NOT_USE = 0
     }
 
 
-    public INVMAS() { }
 
   }
 }

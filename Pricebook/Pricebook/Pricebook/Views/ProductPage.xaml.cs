@@ -10,7 +10,7 @@ namespace Pricebook.Views {
   public partial class ProductPage : ContentPage {
     public Database.INVMAS SelectedProduct { get; private set; }
 
-    public ProductPage(Database.INVMAS SelectedProduct ) {
+    public ProductPage(Database.INVMAS SelectedProduct) {
       InitializeComponent();
       this.BindingContext = this;
       this.SelectedProduct = SelectedProduct;
@@ -19,6 +19,8 @@ namespace Pricebook.Views {
       htmlSource.Html = $@"
                           <h1>{SelectedProduct.DESCRIP}</h1>
                           <p>ITEMNO: {SelectedProduct.ITEMNO}</p>
+                          <p>...</p>
+                          <h2>Special Prices</h2>
 ";
 
 

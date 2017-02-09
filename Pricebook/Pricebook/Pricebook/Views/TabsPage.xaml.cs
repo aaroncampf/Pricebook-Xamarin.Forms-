@@ -11,5 +11,9 @@ namespace Pricebook.Views {
     public TabsPage() {
       InitializeComponent();
     }
+
+    private void tbiUpdateManually_Clicked(object sender, EventArgs e) {
+      this.DisplayAlert("Warning", "This feature is not ready yet and thus does nothing", "Ok");
+    }
   }
 }

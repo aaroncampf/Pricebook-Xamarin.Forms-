@@ -1,6 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+						 xmlns:dg="clr-namespace:Xamarin.Forms.DataGrid;assembly=Xamarin.Forms.DataGrid"
              x:Class="Pricebook.Views.CustomersPage">
-	<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+
+	<Label Text="Add Filtering" />
+
+
+	<dg:DataGrid x:Name="gridCustomers" ItemsSource="{Binding ARCUSTs}" SelectionEnabled="True" ItemSelected="gridCustomers_ItemSelected">
+		<dg:DataGrid.Columns>
+			<dg:DataGridColumn Title="CUSTNO" PropertyName="CUSTNO" Width="65" x:Name="Test" />
+			<dg:DataGridColumn Title="COMPANYNM" PropertyName="COMPANYNM" Width="*" />
+		</dg:DataGrid.Columns>
+	</dg:DataGrid>
+
+
+
 </ContentPage>

@@ -7,34 +7,15 @@
 
 
 
-	
-	<Label Text="Add customers in a new tab (make this tabbed)" />
-	
-	
-	
-	
-	
-	
-
-	<dg:DataGrid x:Name="gridTest" ItemsSource="{Binding INVMAS_Table}" SelectionEnabled="True" ItemSelected="GridTest_ItemSelected">
-		<dg:DataGrid.Columns>
-			<dg:DataGridColumn Title="ITEMNO" PropertyName="ITEMNO" Width="65" x:Name="Test" />
-			<dg:DataGridColumn Title="DESCRIP" PropertyName="DESCRIP" Width="*" />
-		</dg:DataGrid.Columns>
-	</dg:DataGrid>
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
+	<StackLayout>
+		<dg:DataGrid x:Name="gridTest" ItemsSource="{Binding INVMAS_Table}" SelectionEnabled="True" ItemSelected="GridTest_ItemSelected" IsSortable="True">
+			<dg:DataGrid.Columns>
+				<dg:DataGridColumn x:Name="txtfgfdsg" Title="ITEMNO" PropertyName="ITEMNO" Width="65" SortingEnabled="True" />
+				<dg:DataGridColumn Title="DESCRIP" PropertyName="DESCRIP" Width="*" SortingEnabled="True"  />
+			</dg:DataGrid.Columns>
+		</dg:DataGrid>
+		<SearchBar x:Name="txtFilter" TextChanged="txtFilter_TextChanged" Placeholder="Filter" />
+	</StackLayout>
 
 
 
