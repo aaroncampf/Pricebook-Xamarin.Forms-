@@ -9,8 +9,6 @@ using Xamarin.Forms;
 
 namespace Pricebook.Views {
   public partial class PricebookPage : ContentPage {
-    public string MainText { get; set; } = "Hello World";
-    //public List<Database.INVMAS> INVMAS_Table { get; private set; 
     public ObservableCollection<Database.INVMAS> INVMAS_Table_Full { get; private set; } = new ObservableCollection<Database.INVMAS>();
     public ObservableCollection<Database.INVMAS> INVMAS_Table { get; private set; } = new ObservableCollection<Database.INVMAS>();
 
@@ -26,9 +24,6 @@ namespace Pricebook.Views {
         INVMAS_Table_Full.Add(item);
         INVMAS_Table.Add(item);
       }
-
-      //var Test = txtfgfdsg.CellTemplate;
-      //txtfgfdsg.HorizontalContentAlignment = new LayoutOptions(LayoutAlignment.Center, true);
     }
 
     private void txtFilter_TextChanged(object sender, TextChangedEventArgs e) {

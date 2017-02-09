@@ -37,11 +37,11 @@ namespace Pricebook.Views {
     }
 
     private void txtFilter_TextChanged(object sender, TextChangedEventArgs e) {
-      INVMAS_Table.Clear();
-      var Items = INVMAS_Table_Full.Where(x => x.DESCRIP.ToLower().StartsWith(txtFilter.Text.ToLower()) || x.ITEMNO.ToString().ToLower().StartsWith(txtFilter.Text.ToLower()));
+      ARCUSTs.Clear();
+      var Items = ARCUSTs_Full.Where(x => x.COMPANYNM.ToLower().StartsWith(txtFilter.Text.ToLower()) || x.CUSTNO.ToLower().StartsWith(txtFilter.Text.ToLower()));
 
       foreach (var item in Items) {
-        INVMAS_Table.Add(item);
+        ARCUSTs.Add(item);
       }
     }
 
