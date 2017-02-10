@@ -2,16 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 						 xmlns:dg="clr-namespace:Xamarin.Forms.DataGrid;assembly=Xamarin.Forms.DataGrid"
-             x:Class="Pricebook.Views.CustomersPage">
+             x:Class="Pricebook.Views.GetGroupFilter">
 
 
 	<StackLayout>
-		<dg:DataGrid x:Name="gridCustomers" ItemsSource="{Binding ARCUSTs}" SelectionEnabled="True" ItemSelected="gridCustomers_ItemSelected">
+		<dg:DataGrid x:Name="grdData" SelectionEnabled="True" IsSortable="True" ItemsSource="{Binding Table}" ItemSelected="GrdData_ItemSelected">
 			<dg:DataGrid.Columns>
-				<dg:DataGridColumn Title="CUSTNO" PropertyName="CUSTNO" Width="65" x:Name="Test" />
-				<dg:DataGridColumn Title="COMPANYNM" PropertyName="COMPANYNM" Width="*" />
+				<dg:DataGridColumn Title="GROUP" PropertyName="GROUP" Width="65" SortingEnabled="True" />
+				<dg:DataGridColumn Title="DESCRIP" PropertyName="DESCRIP" Width="*" SortingEnabled="True"  />
 			</dg:DataGrid.Columns>
 		</dg:DataGrid>
 		<SearchBar x:Name="txtFilter" TextChanged="txtFilter_TextChanged" Placeholder="Filter" />
 	</StackLayout>
+
 </ContentPage>

@@ -62,6 +62,34 @@ namespace Pricebook.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to VENDORID,COMPANYNM
+        ///100,AMAZON
+        ///2000,ADVANCED RETAIL PRODUCTS
+        ///2100,ALBINA FUEL
+        ///2140,AURORA PLASTICS &amp; PACKAGING
+        ///2145,BARGREEN ELLINGSON
+        ///2157,BLUE RIBBON OFFICE SUPPLY
+        ///2300,BONITA PIONEER PACKAGING
+        ///2400,&quot;BOTS COMPANY, INC.&quot;
+        ///2500,&quot;BRANCH DISTRIBUTING, INC.&quot;
+        ///2530,BRP BOX SHOP
+        ///2556,OFFICE DEPOT
+        ///4540,ALSCO-AMERICAN LINEN DIVISION
+        ///4799,A-1 COUPLING &amp; HOSE
+        ///4803,ALLIANCE PACKAGING
+        ///4804,ALLIANCE PLASTICS
+        ///4805,ALLIED FASTENING SUPPLY
+        ///4806,&quot;AMERICAN NETTING &amp; FABRIC, INC.&quot;
+        ///4807,ALLSTATE PLASTICS
+        ///4808, [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string APVENDOR_Small {
+            get {
+                return ResourceManager.GetString("APVENDOR_Small", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CUSTNO,COMPANYNM,ADDRESS1,CITY,STATE,Zip,PERSON,PHONE,FAX,EMAIL
         ///50001,CASH SALES,ss,PORTLAND,OR,97214,NULL,(503)235-8341,NULL,NULL
         ///50140,11TH AVE LIQUOR,1040 SE HAWTHORNE,PORTLAND,OR,97214,NULL,(503)236-2076,(503)236-2520,NULL
@@ -77,8 +105,37 @@ namespace Pricebook.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ITEMNO,CATG,GROUP,SUPERGROUP,DESCRIP,DESCRIP2,DESCRIP3,BUYUOMCOST,BUYUOMCOST2,W_AVG_COST,LINECOST,UNITFRGHT,DEADNET,COSTBASIS,LOADEDCOST,LOADGROUP,ONORDER,ORDERQTY,VENDORID,VENDORITEM,DELIV_DAYS,DAYS_OH,FLAG_PDAYS,LASTDATE,BACKORDTF,WHSE_LOC,WHSE_BIN,RTDESC1,RTDESC2,RTDESC3,RETAILUOM,RETAILVALU,SELLROUND,SELLUOM,BUY_UOM,ITEMSTATUS,PRBK_SEQ,DO_NOT_USE,SELL_CALC1,SELL_CALC2,SELL_CALC3,SELL_CALC4,SELL_CALC5,SELL_CALC6,SELL_CALC7,SELL_CALC8,SELL_CALC9
-        ///4,G,G-99,DRUM CHARG,IMPRINT CHARGE FOR TUMBLER,1 COLOR,NULL [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to GROUP,CATG,DESCRIP
+        ///B,B,B
+        ///B-01,B,*SIPP ECO BEVERAGE CO.*
+        ///F,F,F
+        ///F-01,F,*GROCERY &amp; CARRY BAGS*
+        ///F-01A,F,*LIQUOR STORE GROCERY BAG
+        ///F-01AA,F,   
+        ///F-01B,F,*T-SHIRT BAG*
+        ///F-01C,F,*HANDLE &amp; SHOPPING BAGS*
+        ///F-01D,F,*WHITE BAGS*
+        ///F-01E,F,*SUPER WAVE CARRY BAGS*
+        ///F-02,F,*PAPER BREAD BAGS*
+        ///F-03,F,*MERCHANDISE BAGS*
+        ///F-03C,F,*COFFEE BAGS*
+        ///F-04,L,*PLASTIC BAGS*
+        ///F-04A,F,&quot;PRODUCE BAGS*
+        ///F-04C	F	*APPLE HANDLE PRODUCE BAGS*
+        ///F-05	F	*PADDED BAGS*
+        ///F-06	F	*SANITARY NAPKIN BAGS*
+        ///F-07	F	*SANDWICH/GREASE PROOF BAGS*
+        ///F-0 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string INVGROUP_Small {
+            get {
+                return ResourceManager.GetString("INVGROUP_Small", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ITEMNO,CATG,GROUP,SUPERGROUP,DESCRIP,DESCRIP2,DESCRIP3,W_AVG_COST,LINECOST,DEADNET,LOADEDCOST,ONORDER,ORDERQTY,VENDORID,VENDORITEM,DELIV_DAYS,DAYS_OH,FLAG_PDAYS,LASTDATE,BACKORDTF,WHSE_LOC,WHSE_BIN,RTDESC1,RTDESC2,SELLROUND,SELLUOM,BUY_UOM,ITEMSTATUS,PRBK_SEQ,SELL_CALC1,SELL_CALC2,SELL_CALC3,SELL_CALC4,SELL_CALC5,SELL_CALC6,SELL_CALC7,SELL_CALC8,SELL_CALC9
+        ///4,G,G-99,DRUM CHARG,IMPRINT CHARGE FOR TUMBLER,1 COLOR,NULL,0,0,0,0,0,1,5675,NULL,0,0,30,NULL,0,,,1/EACH,EACH,5,EACH,EACH,A,9999,NULL,NULL,NULL,NULL,NUL [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string INVMAS {
             get {
@@ -88,12 +145,13 @@ namespace Pricebook.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to ITEMNO,SHIPCUSTNO,LastSellNetnet,EntryDate,CATG,GROUP,DESCRIP,DESCRIP2,DESCRIP3
-        ///13494,74247,0,6/7/2005 0:00,P,P-11,MEDICLEAN,OMNI,NULL
-        ///13762,75103,68.65,1/2/2014 0:00,P,P-11C,9656 PURELL REFILL 800ML,INSTANT HAND SANITIZER,USE W/ 9621 DISP
-        ///13722,74247,0,7/27/2005 0:00,P,P-08,RINSE FREE STRIP,SPARTAN,NULL
-        ///14039,59560,0,12/28/2005 0:00,R,R-30,RENEP WAYLUBE 68,WAYLUBE FUCHS,SUB IS 13156-VACTRA 2
-        ///12692,54039,73.05,8/26/2014 0:00,N,N-11,3&apos;X10&apos; CHARCOAL MAT,AMERICO RIDGERUNNER,NULL
-        ///12693,54039,0,1/24/2006 0 [rest of string was truncated]&quot;;.
+        ///5,73725,27.6,12/10/2014 0:00,G,G-99,ARTWORK &amp; PLATE CHARGES,NULL,NULL
+        ///5,53375,390,4/29/2015 6:18,G,G-99,ARTWORK &amp; PLATE CHARGES,NULL,NULL
+        ///5,73203,700,10/27/2015 9:53,G,G-99,ARTWORK &amp; PLATE CHARGES,NULL,NULL
+        ///5,57900,800,8/18/2015 8:51,G,G-99,ARTWORK &amp; PLATE CHARGES,NULL,NULL
+        ///5,67055,170,9/14/2015 13:05,G,G-99,ARTWORK &amp; PLATE CHARGES,NULL,NULL
+        ///5,52585,210,2/26/2016 9:46,G,G-99,ARTWORK &amp; PLATE CHARGES,NULL,NULL
+        ///5,54445,75,4/ [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ORDERFRM_Plus {
             get {

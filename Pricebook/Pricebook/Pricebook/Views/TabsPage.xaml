@@ -6,7 +6,7 @@
             x:Class="Pricebook.Views.TabsPage">
 
 
-	<ContentPage.ToolbarItems>
+	<ContentPage.ToolbarItems> 
 		<!--<ToolbarItem x:Name="tbiUpdateManually" Command="{Binding AddNew}" Order="Secondary" Priority="0" Icon="IconAddNew" />-->
 		<ToolbarItem x:Name="tbiUpdateManually" Order="Secondary" Text="Manually Update Data" Clicked="tbiUpdateManually_Clicked" />
 	</ContentPage.ToolbarItems>

@@ -3,10 +3,16 @@
 						 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 						 xmlns:dg="clr-namespace:Xamarin.Forms.DataGrid;assembly=Xamarin.Forms.DataGrid"
 						 x:Class="Pricebook.Views.PricebookPage"
-						 x:Name ="cpMain">
+						 x:Name="cpMain">
 
 
-
+	<ContentPage.ToolbarItems>
+		<!--<ToolbarItem x:Name="tbiUpdateManually" Command="{Binding AddNew}" Order="Secondary" Priority="0" Icon="IconAddNew" />-->
+		<ToolbarItem x:Name="btnFilterByGroup" Order="Secondary" Text="Filter By Group" Clicked="btnFilterByGroup_Clicked" />
+		<ToolbarItem x:Name="btnFilterByGVendor" Order="Secondary" Text="Filter By Vendor" Clicked="btnFilterByVendor_Clicked" />
+		<ToolbarItem x:Name="btnClearFilter" Order="Secondary" Text="Filter By Vendor" Clicked="btnClearFilter_Clicked" />
+	</ContentPage.ToolbarItems>
+	
 	<StackLayout>
 		<dg:DataGrid x:Name="gridTest" ItemsSource="{Binding INVMAS_Table}" SelectionEnabled="True" ItemSelected="GridTest_ItemSelected" IsSortable="True">
 			<dg:DataGrid.Columns>
@@ -14,31 +20,11 @@
 				<dg:DataGridColumn Title="DESCRIP" PropertyName="DESCRIP" Width="*" SortingEnabled="True"  />
 			</dg:DataGrid.Columns>
 		</dg:DataGrid>
-		<SearchBar x:Name="txtFilter" TextChanged="txtFilter_TextChanged" Placeholder="Filter" />
+
+		<SearchBar x:Name="txtFilter" TextChanged="txtFilter_TextChanged" Placeholder="Filter" />		
 	</StackLayout>
 
 
 
-
-	<!--<ListView x:Name="listView" ItemsSource="{Binding INVMAS_Table}>
-		<ListView.ItemTemplate>
-			<DataTemplate>
-				<ViewCell>
-					<Grid>
-						<Grid RowSpacing="0" ColumnSpacing="0">
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="Auto" />
-								<ColumnDefinition Width="Auto" />
-								<ColumnDefinition Width="Auto" />
-							</Grid.ColumnDefinitions>
-							<Label Grid.Column="0" Text="{Binding ITEMNO}" />
-							<Label Grid.Column="1" Text="{Binding DESCRIP}" />
-							<Label Grid.Column="2" Text="{Binding DESCRIP2}"  />
-						</Grid>
-					</Grid>
-				</ViewCell>
-			</DataTemplate>
-		</ListView.ItemTemplate>
-	</ListView>-->
 
 </ContentPage>
