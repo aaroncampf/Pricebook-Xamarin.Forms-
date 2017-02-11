@@ -7,7 +7,6 @@
 
 
 	<ContentPage.ToolbarItems>
-		<!--<ToolbarItem x:Name="tbiUpdateManually" Command="{Binding AddNew}" Order="Secondary" Priority="0" Icon="IconAddNew" />-->
 		<ToolbarItem x:Name="btnFilterByGroup" Order="Secondary" Text="Filter By Group" Clicked="btnFilterByGroup_Clicked" />
 		<ToolbarItem x:Name="btnFilterByGVendor" Order="Secondary" Text="Filter By Vendor" Clicked="btnFilterByVendor_Clicked" />
 		<ToolbarItem x:Name="btnClearFilter" Order="Secondary" Text="Filter By Vendor" Clicked="btnClearFilter_Clicked" />

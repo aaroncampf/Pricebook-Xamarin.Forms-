@@ -19,7 +19,6 @@ namespace Pricebook.Views {
       Xamarin.Forms.DataGrid.DataGridComponent.Init();
 
       //this.Table = groupListItems;
-
       foreach (var item in groupListItems) {
         this.Cache.Add(item);
         this.Table.Add(item);
@@ -42,7 +41,7 @@ namespace Pricebook.Views {
 
     private void txtFilter_TextChanged(object sender, TextChangedEventArgs e) {
       Table.Clear();
-      var Items = Cache.Where(x => 
+      var Items = Cache.Where(x =>
                                   x.GROUP.ToLower().StartsWith(txtFilter.Text.ToLower()) ||
                                   x.DESCRIP.ToLower().StartsWith(txtFilter.Text.ToLower())
                              );

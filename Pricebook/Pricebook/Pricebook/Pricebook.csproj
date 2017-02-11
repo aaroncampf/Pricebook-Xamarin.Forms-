@@ -57,6 +57,9 @@
     <Compile Include="Views\GetGroupFilter.xaml.cs">
       <DependentUpon>GetGroupFilter.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\GetVendor.xaml.cs">
+      <DependentUpon>GetVendor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PricebookPage.xaml.cs">
       <DependentUpon>PricebookPage.xaml</DependentUpon>
     </Compile>
@@ -165,6 +168,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\GetGroupFilter.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\GetVendor.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
