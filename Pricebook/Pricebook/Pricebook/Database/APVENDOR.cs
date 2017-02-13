@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Pricebook.Database {
-  public class APVENDOR_Small {
+  public class APVENDOR {
     public string VENDORID { get; set; }
     public string COMPANYNM { get; set; }
 

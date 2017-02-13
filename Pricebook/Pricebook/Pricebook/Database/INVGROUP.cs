@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Pricebook.Database {
-  public class INVGROUP_Small {
+  public class INVGROUP {
     public string GROUP { get; set; }
     public string DESCRIP { get; set; }
     
@@ -18,8 +18,5 @@ SELECT
 FROM [AJP].[dbo].[INVGROUP]
 ";
     }
-
-
-    //public override string ToString() => 
   }
 }

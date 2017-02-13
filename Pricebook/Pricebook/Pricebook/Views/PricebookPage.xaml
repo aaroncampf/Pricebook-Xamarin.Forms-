@@ -9,7 +9,7 @@
 	<ContentPage.ToolbarItems>
 		<ToolbarItem x:Name="btnFilterByGroup" Order="Secondary" Text="Filter By Group" Clicked="btnFilterByGroup_Clicked" />
 		<ToolbarItem x:Name="btnFilterByGVendor" Order="Secondary" Text="Filter By Vendor" Clicked="btnFilterByVendor_Clicked" />
-		<ToolbarItem x:Name="btnClearFilter" Order="Secondary" Text="Filter By Vendor" Clicked="btnClearFilter_Clicked" />
+		<ToolbarItem x:Name="btnClearFilter" Order="Secondary" Text="Clear Filter" Clicked="btnClearFilter_Clicked" />
 	</ContentPage.ToolbarItems>
 	
 	<StackLayout>

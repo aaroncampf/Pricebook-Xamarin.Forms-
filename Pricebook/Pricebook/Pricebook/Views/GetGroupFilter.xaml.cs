@@ -9,11 +9,11 @@ using Xamarin.Forms;
 
 namespace Pricebook.Views {
   public partial class GetGroupFilter : ContentPage {
-    public List<INVGROUP_Small> Cache { get; private set; } = new List<INVGROUP_Small>();
-    public ObservableCollection<INVGROUP_Small> Table { get; private set; } = new ObservableCollection<INVGROUP_Small>();
+    public List<INVGROUP> Cache { get; private set; } = new List<INVGROUP>();
+    public ObservableCollection<INVGROUP> Table { get; private set; } = new ObservableCollection<INVGROUP>();
     public string SelectedGroup { get; set; }
 
-    public GetGroupFilter(ObservableCollection<INVGROUP_Small> groupListItems) {
+    public GetGroupFilter(ObservableCollection<INVGROUP> groupListItems) {
       InitializeComponent();
       this.BindingContext = this;
       Xamarin.Forms.DataGrid.DataGridComponent.Init();
@@ -34,7 +34,7 @@ namespace Pricebook.Views {
      }
      */
     private void GrdData_ItemSelected(object sender, SelectedItemChangedEventArgs e) {
-      SelectedGroup = (e.SelectedItem as Database.INVGROUP_Small).GROUP;
+      SelectedGroup = (e.SelectedItem as Database.INVGROUP).GROUP;
       this.Navigation.PopModalAsync();
     }
 

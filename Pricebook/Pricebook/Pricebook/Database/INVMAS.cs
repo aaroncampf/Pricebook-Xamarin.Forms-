@@ -8,8 +8,6 @@ namespace Pricebook.Database {
   public class INVMAS {
 
     public int ITEMNO { get; set; }
-
-
     public string CATG { get; set; }
     public string GROUP { get; set; }
     public string SUPERGROUP { get; set; }
@@ -90,7 +88,10 @@ SELECT
 ,[SELL_CALC8]
 ,[SELL_CALC9]
 FROM [AJP].[dbo].[INVMAS]
-WHERE DO_NOT_USE = 0
+WHERE 
+DO_NOT_USE = 0
+AND
+ISNUMERIC(ITEMNO) = 1
 ";
     }
 
