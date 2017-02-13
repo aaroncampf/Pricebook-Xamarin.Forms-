@@ -15,6 +15,9 @@ namespace Pricebook.Views {
 
     public ObservableCollection<Database.INVGROUP_Small> GroupListItems { get; private set; } = new ObservableCollection<Database.INVGROUP_Small>();
 
+    public ObservableCollection<Database.APVENDOR_Small> APVENDOR_Smalls { get; private set; } = new ObservableCollection<Database.APVENDOR_Small>();
+
+
     public PricebookPage() {
       // var DFile = Database.Passwords.DBox.Files.DownloadAsync("/Storage/Pricebook.xml").Result;
 
@@ -54,7 +57,17 @@ namespace Pricebook.Views {
     }
 
     private void btnFilterByVendor_Clicked(object sender, EventArgs e) {
-      throw new NotImplementedException();
+      var Form = new GetVendor(APVENDOR_Smalls);
+      Navigation.PushModalAsync(Form);
+
+      Form.Disappearing += (sender1, e1) => {
+        var Items = INVMAS_Table_Full.Where(x => x.VENDORID == Form.SelectedVendorID);
+
+        INVMAS_Table.Clear();
+        foreach (var item in Items) {
+          INVMAS_Table.Add(item);
+        }
+      };
     }
 
     private void btnClearFilter_Clicked(object sender, EventArgs e) {
