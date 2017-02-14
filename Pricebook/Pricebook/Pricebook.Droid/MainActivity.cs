@@ -10,6 +10,11 @@ using Android.OS;
 namespace Pricebook.Droid {
   [Activity(Label = "Pricebook", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
   public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity {
+
+
+
+
+
     protected override void OnCreate(Bundle bundle) {
       TabLayoutResource = Resource.Layout.Tabbar;
       ToolbarResource = Resource.Layout.Toolbar;
@@ -18,60 +23,76 @@ namespace Pricebook.Droid {
 
 
 
-      Window.SetSoftInputMode(Android.Views.SoftInput.AdjustResize);
+      Views.TabsPage.GetXML = () => {
+        return System.Xml.Linq.XElement.Load($"{Android.OS.Environment.ExternalStorageDirectory.Path}/Aaron/Pricebook_XamarinForms_Debug.xml");
+      };
+
+      Views.TabsPage.UpdateXML = () => {
+        DownloadData("Pricebook_XamarinForms_Debug.xml", 0);
+      };
+
+
+
+      DownloadData("Pricebook_XamarinForms_Debug.xml", 0);
+
+
+
+
+      Window.SetSoftInputMode(SoftInput.AdjustResize);
       AndroidBug5497WorkaroundForXamarinAndroid.assistActivity(this);
 
 
       global::Xamarin.Forms.Forms.Init(this, bundle);
       LoadApplication(new App());
     }
-  }
 
-  public class AndroidBug5497WorkaroundForXamarinAndroid {
+    protected bool DownloadData(string FileNameWithExtension, double DaysToWaitForUpdate, string DefaultFolder = "Storage") {
+      var Folder = $"{Android.OS.Environment.ExternalStorageDirectory.Path}/Aaron";
+      var file = new System.IO.FileInfo(Folder + "/" + FileNameWithExtension);
 
-    // For more information, see https://code.google.com/p/android/issues/detail?id=5497
-    // To use this class, simply invoke assistActivity() on an Activity that already has its content view set.
-
-    // CREDIT TO Joseph Johnson (http://stackoverflow.com/users/341631/joseph-johnson) for publishing the original Android solution on stackoverflow.com
-
-    public static void assistActivity(Activity activity) {
-      new AndroidBug5497WorkaroundForXamarinAndroid(activity);
-    }
-
-    private Android.Views.View mChildOfContent;
-    private int usableHeightPrevious;
-    private FrameLayout.LayoutParams frameLayoutParams;
-
-    private AndroidBug5497WorkaroundForXamarinAndroid(Activity activity) {
-      FrameLayout content = (FrameLayout)activity.FindViewById(Android.Resource.Id.Content);
-      mChildOfContent = content.GetChildAt(0);
-      ViewTreeObserver vto = mChildOfContent.ViewTreeObserver;
-      vto.GlobalLayout += (object sender, EventArgs e) => {
-        possiblyResizeChildOfContent();
-      };
-      frameLayoutParams = (FrameLayout.LayoutParams)mChildOfContent.LayoutParameters;
-    }
-
-    private void possiblyResizeChildOfContent() {
-      int usableHeightNow = computeUsableHeight();
-      if (usableHeightNow != usableHeightPrevious) {
-        int usableHeightSansKeyboard = mChildOfContent.RootView.Height;
-        int heightDifference = usableHeightSansKeyboard - usableHeightNow;
-
-        frameLayoutParams.Height = usableHeightSansKeyboard - heightDifference;
-
-        mChildOfContent.RequestLayout();
-        usableHeightPrevious = usableHeightNow;
+      //try {
+      if (!System.IO.Directory.Exists(Folder)) {
+        System.IO.Directory.CreateDirectory(Folder);
       }
-    }
+      if (!System.IO.File.Exists(Folder + "/" + FileNameWithExtension)) {
+        file.Create().Close();
 
-    private int computeUsableHeight() {
-      var r = new Android.Graphics.Rect();
-      mChildOfContent.GetWindowVisibleDisplayFrame(r);
-      if (Build.VERSION.SdkInt < BuildVersionCodes.Lollipop) {
-        return (r.Bottom - r.Top);
+        using (var output = System.IO.File.OpenWrite($"{Folder}/{FileNameWithExtension}")) {
+          try {
+            Passwords.DBox.GetFile($"{DefaultFolder}/{FileNameWithExtension}", null, output, null);
+          }
+          catch (Exception ex) {
+
+            throw ex;
+          }
+        }
+
+        return true;
       }
-      return r.Bottom;
+      else if (System.IO.File.GetCreationTime(Folder + $"/{FileNameWithExtension}") < DateTime.Now.AddDays(-DaysToWaitForUpdate)) {
+        //try {
+        file.Delete();
+        file.Create().Close();
+        //}
+        //catch (Exception ex) {
+        //System.Diagnostics.Debugger.Break();
+        //  throw;
+        //}
+        using (var output = System.IO.File.OpenWrite($"{Folder}/{FileNameWithExtension}")) {
+          Passwords.DBox.GetFile($"{DefaultFolder}/{FileNameWithExtension}", null, output, null);
+        }
+
+        return true;
+      }
+      //}
+      //catch (Exception ex) {
+      //  new AlertDialog.Builder(this).SetTitle(ex.Message).SetMessage(ex.ToString()).Show();
+      //  System.Diagnostics.Debugger.Break();
+      //  throw ex;
+      //}
+
+      return false;
+      //return System.Xml.Linq.XElement.Load($"{Folder}/{FileNameWithExtension}");
     }
   }
 }
