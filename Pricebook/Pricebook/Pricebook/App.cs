@@ -7,6 +7,7 @@ using Xamarin.Forms;
 
 namespace Pricebook {
   public class App : Application {
+
     public App() {
       // The root page of your application
       //var content = new ContentPage {

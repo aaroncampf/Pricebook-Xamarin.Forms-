@@ -17,6 +17,7 @@ namespace Pricebook.Droid {
       base.OnCreate(bundle);
 
 
+
       Window.SetSoftInputMode(Android.Views.SoftInput.AdjustResize);
       AndroidBug5497WorkaroundForXamarinAndroid.assistActivity(this);
 
