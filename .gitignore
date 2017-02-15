@@ -253,3 +253,4 @@ paket-files/
 *.csv
 Pricebook/Pricebook/Pricebook/Database/Passwords.cs
 Pricebook/Pricebook/Pricebook.Droid/Passwords.cs
+Pricebook/Pricebook/Pricebook.Droid/Classes/Passwords.cs
