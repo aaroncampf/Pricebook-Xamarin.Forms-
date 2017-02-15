@@ -20,22 +20,18 @@ namespace Pricebook.Views {
       this.BindingContext = this;
       Xamarin.Forms.DataGrid.DataGridComponent.Init();
 
-      /*
-      foreach (var item in new CsvHelper.CsvReader(new System.IO.StringReader(Properties.Resources.ARCUST)).GetRecords<Database.ARCUST>()) {
-        ARCUSTs_Full.Add(item);
-        ARCUSTs.Add(item);
-      }
+      RefreshData();
+    }
 
-      foreach (var item in new CsvHelper.CsvReader(new System.IO.StringReader(Properties.Resources.ORDERFRM_Plus)).GetRecords<Database.ORDERFRM_Plus>()) {
-        ORDERFRM_Plus_Data.Add(item);
-      }
-      */
-
+    public void RefreshData() {
+      ARCUSTs_Full.Clear();
+      ARCUSTs.Clear();
       foreach (var item in new CsvHelper.CsvReader(new System.IO.StringReader(TabsPage.XML.Element("ARCUST").Value)).GetRecords<Database.ARCUST>()) {
         ARCUSTs_Full.Add(item);
         ARCUSTs.Add(item);
       }
 
+      ORDERFRM_Plus_Data.Clear();
       foreach (var item in new CsvHelper.CsvReader(new System.IO.StringReader(TabsPage.XML.Element("ORDERFRM_Plus").Value)).GetRecords<Database.ORDERFRM_Plus>()) {
         ORDERFRM_Plus_Data.Add(item);
       }

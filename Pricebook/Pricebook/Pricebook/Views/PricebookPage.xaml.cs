@@ -20,31 +20,24 @@ namespace Pricebook.Views {
       this.BindingContext = this;
       Xamarin.Forms.DataGrid.DataGridComponent.Init();
 
-      /*
-      foreach (var item in new CsvHelper.CsvReader(new System.IO.StringReader(Properties.Resources.INVMAS)).GetRecords<Database.INVMAS>()) {
-        INVMAS_Table_Full.Add(item);
-        INVMAS_Table.Add(item);
-      }
-
-      foreach (var item in new CsvHelper.CsvReader(new System.IO.StringReader(Properties.Resources.INVGROUP_Small)).GetRecords<Database.INVGROUP>()) {
-        GroupListItems.Add(item);
-      }
-
-      foreach (var item in new CsvHelper.CsvReader(new System.IO.StringReader(Properties.Resources.APVENDOR_Small)).GetRecords<Database.APVENDOR>()) {
-        APVENDOR_Smalls.Add(item);
-      }
-      */
+      RefreshData();
+    }
 
 
+    public void RefreshData() {
+      APVENDOR_Smalls.Clear();
       foreach (var item in new CsvHelper.CsvReader(new System.IO.StringReader(TabsPage.XML.Element("APVENDOR").Value)).GetRecords<Database.APVENDOR>()) {
         APVENDOR_Smalls.Add(item);
       }
 
+      INVMAS_Table_Full.Clear();
+      INVMAS_Table.Clear();
       foreach (var item in new CsvHelper.CsvReader(new System.IO.StringReader(TabsPage.XML.Element("INVMAS").Value)).GetRecords<Database.INVMAS>()) {
         INVMAS_Table_Full.Add(item);
         INVMAS_Table.Add(item);
       }
 
+      GroupListItems.Clear();
       foreach (var item in new CsvHelper.CsvReader(new System.IO.StringReader(TabsPage.XML.Element("INVGROUP").Value)).GetRecords<Database.INVGROUP>()) {
         GroupListItems.Add(item);
       }
@@ -55,8 +48,9 @@ namespace Pricebook.Views {
       Navigation.PushModalAsync(Form);
 
       Form.Disappearing += (sender1, e1) => {
-        var Items = INVMAS_Table_Full.Where(x => x.GROUP.Contains(Form.SelectedGroup));
+        if (string.IsNullOrEmpty(Form.SelectedGroup)) return;
 
+        var Items = INVMAS_Table_Full.Where(x => x.GROUP.Contains(Form.SelectedGroup));
         INVMAS_Table.Clear();
         foreach (var item in Items) {
           INVMAS_Table.Add(item);
@@ -69,8 +63,9 @@ namespace Pricebook.Views {
       Navigation.PushModalAsync(Form);
 
       Form.Disappearing += (sender1, e1) => {
-        var Items = INVMAS_Table_Full.Where(x => x.VENDORID == Form.SelectedVendorID);
+        if (string.IsNullOrEmpty(Form.SelectedVendorID)) return;
 
+        var Items = INVMAS_Table_Full.Where(x => x.VENDORID == Form.SelectedVendorID);
         INVMAS_Table.Clear();
         foreach (var item in Items) {
           INVMAS_Table.Add(item);

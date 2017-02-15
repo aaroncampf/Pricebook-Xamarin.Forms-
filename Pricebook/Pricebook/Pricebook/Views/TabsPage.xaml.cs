@@ -22,6 +22,9 @@ namespace Pricebook.Views {
     private void tbiUpdateManually_Clicked(object sender, EventArgs e) {
       UpdateXML();
       XML = GetXML();
+
+      pagePrices.RefreshData();
+      pageCustomers.RefreshData();
       //this.DisplayAlert("Warning", "This feature is not ready yet and thus does nothing", "Ok");
     }
   }

@@ -13,8 +13,8 @@
 
 
 	<TabbedPage.Children>
-		<Pages:PricebookPage Title="Prices" />
-		<Pages:CustomersPage Title="Customers" />
+		<Pages:PricebookPage x:Name="pagePrices" Title="Prices" />
+		<Pages:CustomersPage x:Name="pageCustomers" Title="Customers" />
 	</TabbedPage.Children>
 	
 	
