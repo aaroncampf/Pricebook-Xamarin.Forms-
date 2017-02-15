@@ -21,7 +21,7 @@ namespace Pricebook.Views {
                           <p>Address: {SelectedCustomer.ADDRESS1}</p>
                           <p>City: {SelectedCustomer.CITY}</p>
                           <p>State: {SelectedCustomer.STATE}</p>
-                          <p>Zip: {SelectedCustomer.Zip}</p>
+                          <p>Zip: {SelectedCustomer.ZIP}</p>
                           <p>Person: {SelectedCustomer.PERSON}</p>
                           <p>Phone: {SelectedCustomer.PHONE}</p>
                           <p>Fax: {SelectedCustomer.FAX}</p>

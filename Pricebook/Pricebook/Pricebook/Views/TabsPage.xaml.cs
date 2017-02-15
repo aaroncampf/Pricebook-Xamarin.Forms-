@@ -13,7 +13,7 @@ namespace Pricebook.Views {
       InitializeComponent();
     }
 
-
+    public static System.Xml.Linq.XElement XML { get; set; }
     public static Func<System.Xml.Linq.XElement> GetXML { get; set; }
     public static Action UpdateXML { get; set; }
 
@@ -21,6 +21,7 @@ namespace Pricebook.Views {
 
     private void tbiUpdateManually_Clicked(object sender, EventArgs e) {
       UpdateXML();
+      XML = GetXML();
       //this.DisplayAlert("Warning", "This feature is not ready yet and thus does nothing", "Ok");
     }
   }

@@ -16,17 +16,11 @@ namespace Pricebook.Views {
 
 
     public PricebookPage() {
-      // var DFile = Database.Passwords.DBox.Files.DownloadAsync("/Storage/Pricebook.xml").Result;
-      
-
       InitializeComponent();
       this.BindingContext = this;
       Xamarin.Forms.DataGrid.DataGridComponent.Init();
 
-
-
-
-
+      /*
       foreach (var item in new CsvHelper.CsvReader(new System.IO.StringReader(Properties.Resources.INVMAS)).GetRecords<Database.INVMAS>()) {
         INVMAS_Table_Full.Add(item);
         INVMAS_Table.Add(item);
@@ -39,26 +33,21 @@ namespace Pricebook.Views {
       foreach (var item in new CsvHelper.CsvReader(new System.IO.StringReader(Properties.Resources.APVENDOR_Small)).GetRecords<Database.APVENDOR>()) {
         APVENDOR_Smalls.Add(item);
       }
-
-
-
-
-
-
-
-
-      /*
-      using (var stream = new System.IO.MemoryStream())
-      using (var reader = new System.IO.StreamReader(stream))
-      using (var writer = new System.IO.StreamWriter(stream))
-      using (var csv = new CsvHelper.CsvWriter(writer)) {
-        csv.WriteRecords(INVMAS_Table_Full);
-        writer.Flush();
-        stream.Position = 0;
-        var text = reader.ReadToEnd();
-      }
       */
 
+
+      foreach (var item in new CsvHelper.CsvReader(new System.IO.StringReader(TabsPage.XML.Element("APVENDOR").Value)).GetRecords<Database.APVENDOR>()) {
+        APVENDOR_Smalls.Add(item);
+      }
+
+      foreach (var item in new CsvHelper.CsvReader(new System.IO.StringReader(TabsPage.XML.Element("INVMAS").Value)).GetRecords<Database.INVMAS>()) {
+        INVMAS_Table_Full.Add(item);
+        INVMAS_Table.Add(item);
+      }
+
+      foreach (var item in new CsvHelper.CsvReader(new System.IO.StringReader(TabsPage.XML.Element("INVGROUP").Value)).GetRecords<Database.INVGROUP>()) {
+        GroupListItems.Add(item);
+      }
     }
 
     private void btnFilterByGroup_Clicked(object sender, EventArgs e) {

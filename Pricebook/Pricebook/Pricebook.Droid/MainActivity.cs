@@ -27,10 +27,9 @@ namespace Pricebook.Droid {
       };
 
 
-      DownloadData("Pricebook_XamarinForms_Debug.xml", 0);
+      DownloadData("Pricebook_XamarinForms_Debug.xml", 3);
 
-
-
+      Views.TabsPage.XML = Views.TabsPage.GetXML();
 
       Window.SetSoftInputMode(SoftInput.AdjustResize);
       AndroidBug5497WorkaroundForXamarinAndroid.assistActivity(this);
@@ -51,33 +50,18 @@ namespace Pricebook.Droid {
       if (!System.IO.File.Exists(Folder + "/" + FileNameWithExtension)) {
         file.Create().Close();
 
-        using (var output = System.IO.File.OpenWrite($"{Folder}/{FileNameWithExtension}")) {
-          try {
-            //Passwords.DBox.GetFile($"{DefaultFolder}/{FileNameWithExtension}", null, output, null);
-            var File = Passwords.DBox.Files.DownloadAsync($"{DefaultFolder}/{FileNameWithExtension}").Result;
-            var FileData = File.GetContentAsStringAsync().Result;
-          }
-          catch (Exception ex) {
-
-            throw ex;
-          }
-        }
-
+        var File = Passwords.DBox.Files.DownloadAsync($"/{DefaultFolder}/{FileNameWithExtension}").Result;
+        var FileData = File.GetContentAsStringAsync().Result;
+        System.IO.File.WriteAllText($"{Folder}/{FileNameWithExtension}", FileData);
         return true;
       }
       else if (System.IO.File.GetCreationTime(Folder + $"/{FileNameWithExtension}") < DateTime.Now.AddDays(-DaysToWaitForUpdate)) {
         file.Delete();
         file.Create().Close();
 
-        using (var output = System.IO.File.OpenWrite($"{Folder}/{FileNameWithExtension}")) {
-          //Passwords.DBox.GetFile($"{DefaultFolder}/{FileNameWithExtension}", null, output, null);
-          var File = Passwords.DBox.Files.DownloadAsync($"/{DefaultFolder}/{FileNameWithExtension}").Result;
-          var FileData = File.GetContentAsStringAsync().Result;
-
-          System.IO.File.WriteAllText($"{Folder}/{FileNameWithExtension}", FileData);
-
-        }
-
+        var File = Passwords.DBox.Files.DownloadAsync($"/{DefaultFolder}/{FileNameWithExtension}").Result;
+        var FileData = File.GetContentAsStringAsync().Result;
+        System.IO.File.WriteAllText($"{Folder}/{FileNameWithExtension}", FileData);    
         return true;
       }
 

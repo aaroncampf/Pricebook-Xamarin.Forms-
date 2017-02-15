@@ -117,20 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="APVENDOR_Small" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\database\apvendor_small.csv;System.String, System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a;Windows-1252</value>
-  </data>
-  <data name="ARCUST" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\database\arcust.csv;System.String, System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a;Windows-1252</value>
-  </data>
-  <data name="INVGROUP_Small" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\database\invgroup_small.csv;System.String, System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a;Windows-1252</value>
-  </data>
-  <data name="INVMAS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Database\INVMAS.csv;System.String, System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a;Windows-1252</value>
-  </data>
-  <data name="ORDERFRM_Plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\database\orderfrm_plus.csv;System.String, System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a;Windows-1252</value>
-  </data>
 </root>

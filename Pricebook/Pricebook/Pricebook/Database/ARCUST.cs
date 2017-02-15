@@ -11,7 +11,7 @@ namespace Pricebook.Database {
     public string ADDRESS1 { get; set; }
     public string CITY { get; set; }
     public string STATE { get; set; }
-    public string Zip { get; set; }
+    public string ZIP { get; set; }
     public string PERSON { get; set; }
     public string PHONE { get; set; }
     public string FAX { get; set; }

@@ -20,6 +20,7 @@ namespace Pricebook.Views {
       this.BindingContext = this;
       Xamarin.Forms.DataGrid.DataGridComponent.Init();
 
+      /*
       foreach (var item in new CsvHelper.CsvReader(new System.IO.StringReader(Properties.Resources.ARCUST)).GetRecords<Database.ARCUST>()) {
         ARCUSTs_Full.Add(item);
         ARCUSTs.Add(item);
@@ -28,12 +29,20 @@ namespace Pricebook.Views {
       foreach (var item in new CsvHelper.CsvReader(new System.IO.StringReader(Properties.Resources.ORDERFRM_Plus)).GetRecords<Database.ORDERFRM_Plus>()) {
         ORDERFRM_Plus_Data.Add(item);
       }
-    }
+      */
 
+      foreach (var item in new CsvHelper.CsvReader(new System.IO.StringReader(TabsPage.XML.Element("ARCUST").Value)).GetRecords<Database.ARCUST>()) {
+        ARCUSTs_Full.Add(item);
+        ARCUSTs.Add(item);
+      }
+
+      foreach (var item in new CsvHelper.CsvReader(new System.IO.StringReader(TabsPage.XML.Element("ORDERFRM_Plus").Value)).GetRecords<Database.ORDERFRM_Plus>()) {
+        ORDERFRM_Plus_Data.Add(item);
+      }
+    }
 
     private void gridCustomers_ItemSelected(object sender, SelectedItemChangedEventArgs e) {
       Navigation.PushAsync(new CustomerPage(e.SelectedItem as Database.ARCUST, ORDERFRM_Plus_Data));
-
     }
 
     private void txtFilter_TextChanged(object sender, TextChangedEventArgs e) {
@@ -44,7 +53,5 @@ namespace Pricebook.Views {
         ARCUSTs.Add(item);
       }
     }
-
-
   }
 }
