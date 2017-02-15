@@ -18,26 +18,16 @@ namespace Pricebook.Views {
       this.BindingContext = this;
       Xamarin.Forms.DataGrid.DataGridComponent.Init();
 
-      //this.Table = groupListItems;
       foreach (var item in groupListItems) {
         this.Cache.Add(item);
         this.Table.Add(item);
       }
     }
 
-    /*
-     public static string GetGroup(INavigation Navigation, ObservableCollection<Database.INVGROUP_Small> Items) {
-       var Form = new GetGroupFilter() { Table = Items };
-       Navigation.PushModalAsync(Form);
-
-       return Form.SelectedGroup;
-     }
-     */
     private void GrdData_ItemSelected(object sender, SelectedItemChangedEventArgs e) {
       SelectedGroup = (e.SelectedItem as Database.INVGROUP).GROUP;
       this.Navigation.PopModalAsync();
     }
-
 
     private void txtFilter_TextChanged(object sender, TextChangedEventArgs e) {
       Table.Clear();

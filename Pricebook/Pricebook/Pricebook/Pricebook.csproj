@@ -120,11 +120,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Database\APVENDOR_Small.csv" />
-    <None Include="Database\ARCUST.csv" />
-    <None Include="Database\INVGROUP_Small.csv" />
-    <None Include="Database\INVMAS.csv" />
-    <None Include="Database\ORDERFRM_Plus.csv" />
     <None Include="GettingStarted.Xamarin" />
     <None Include="packages.config" />
   </ItemGroup>
