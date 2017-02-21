@@ -25,13 +25,23 @@ Data comes from the AJP application Join Data Uploader which uploads data onto D
 The file is an xml file with the following structure 
 
 : Database
+
 :: APVENDOR
+
 ::: CSV
+
 :: ARCUST
+
 ::: CSV
+
 :: INVGROUP
+
 ::: CSV
+
 :: INVMAS
+
 ::: CSV
+
 :: ORDERFRM_Plus
+
 ::: CSV
