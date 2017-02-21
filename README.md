@@ -19,7 +19,7 @@ Displays all records in the pricebook (table&nbsp;&nbsp;&nbsp; INVMAS)
 ## Customers Tab
 
 ### Filtering
-
+* By String
 
 ## 
 
