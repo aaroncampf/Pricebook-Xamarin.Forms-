@@ -1,5 +1,5 @@
 # Pricebook-Xamarin.Forms-
-An Android pricebook for AJP Northwest created using Xamarin.Forms, Dropbox.Api and CsvHelper.
+An Android price book for AJP Northwest created using C#, Xamarin.Forms, Dropbox.Api and CsvHelper.
 
 ## Overview
 
