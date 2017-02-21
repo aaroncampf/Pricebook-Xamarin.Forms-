@@ -4,6 +4,9 @@ An Android pricebook for AJP Northwest created using Xamarin.Forms, Dropbox.Api 
 ## Overview
 
 
+## Disclaimer
+This was build for AJP Northwest and uploaded with permission in return a free prototype.
+
 
 ## Pricebook Tab
 Displays all records in the pricebook (table&nbsp;&nbsp;&nbsp; INVMAS)
