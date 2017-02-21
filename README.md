@@ -24,7 +24,7 @@ Displays all records in the pricebook (table&nbsp;&nbsp;&nbsp; INVMAS)
 ## 
 
 ## Data
-Data comes from the AJP application Join Data Uploader which uploads data onto Dropbox Where each application is services gets a single file just for it.
+Data comes from the AJP application Join Data Uploader which uploads data onto Dropbox where each application is treated as a service and gets a single file uploaded just for it to use.
 The file is an xml file with the following structure 
 
 &nbsp;&nbsp;&nbsp; Database
