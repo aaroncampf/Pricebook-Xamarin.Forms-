@@ -6,7 +6,7 @@ An Android pricebook for AJP Northwest created using Xamarin.Forms, Dropbox.Api 
 
 
 ## Pricebook Tab
-Displays all records in the pricebook (table: INVMAS)
+Displays all records in the pricebook (table&nbsp;&nbsp;&nbsp; INVMAS)
 
 ### Filtering
 * By String
@@ -24,24 +24,24 @@ Displays all records in the pricebook (table: INVMAS)
 Data comes from the AJP application Join Data Uploader which uploads data onto Dropbox Where each application is services gets a single file just for it.
 The file is an xml file with the following structure 
 
-Database
+&nbsp;&nbsp;&nbsp; Database
 
-   APVENDOR
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; APVENDOR
 
-::: CSV
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CSV
 
-:: ARCUST
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ARCUST
 
-::: CSV
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CSV
 
-:: INVGROUP
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INVGROUP
 
-::: CSV
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CSV
 
-:: INVMAS
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INVMAS
 
-::: CSV
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CSV
 
-:: ORDERFRM_Plus
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ORDERFRM_Plus
 
-::: CSV
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CSV
