@@ -5,7 +5,7 @@ An Android price book for AJP Northwest created using C#, Xamarin.Forms, Dropbox
 
 
 ## Disclaimer
-This was build for AJP Northwest and uploaded with permission in return a free prototype.
+This was built for AJP Northwest and uploaded with permission in return a free prototype.
 
 
 ## Pricebook Tab
