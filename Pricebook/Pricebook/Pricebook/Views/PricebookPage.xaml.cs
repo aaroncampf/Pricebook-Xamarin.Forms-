@@ -23,7 +23,6 @@ namespace Pricebook.Views {
       RefreshData();
     }
 
-
     public void RefreshData() {
       APVENDOR_Smalls.Clear();
       foreach (var item in new CsvHelper.CsvReader(new System.IO.StringReader(TabsPage.XML.Element("APVENDOR").Value)).GetRecords<Database.APVENDOR>()) {
