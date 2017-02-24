@@ -17,29 +17,31 @@ namespace Pricebook.Views {
 
     public PricebookPage() {
       InitializeComponent();
-      this.BindingContext = this;
       Xamarin.Forms.DataGrid.DataGridComponent.Init();
-
-      RefreshData();
     }
 
     public void RefreshData() {
       APVENDOR_Smalls.Clear();
+      INVMAS_Table_Full.Clear();
+      INVMAS_Table.Clear();
+      GroupListItems.Clear();
+
+      gridTest.ItemsSource = null;
+
       foreach (var item in new CsvHelper.CsvReader(new System.IO.StringReader(TabsPage.XML.Element("APVENDOR").Value)).GetRecords<Database.APVENDOR>()) {
         APVENDOR_Smalls.Add(item);
       }
 
-      INVMAS_Table_Full.Clear();
-      INVMAS_Table.Clear();
       foreach (var item in new CsvHelper.CsvReader(new System.IO.StringReader(TabsPage.XML.Element("INVMAS").Value)).GetRecords<Database.INVMAS>()) {
         INVMAS_Table_Full.Add(item);
         INVMAS_Table.Add(item);
       }
 
-      GroupListItems.Clear();
       foreach (var item in new CsvHelper.CsvReader(new System.IO.StringReader(TabsPage.XML.Element("INVGROUP").Value)).GetRecords<Database.INVGROUP>()) {
         GroupListItems.Add(item);
       }
+
+      gridTest.ItemsSource = INVMAS_Table;
     }
 
     private void btnFilterByGroup_Clicked(object sender, EventArgs e) {

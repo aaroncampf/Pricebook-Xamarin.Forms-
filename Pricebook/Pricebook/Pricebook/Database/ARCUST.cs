@@ -17,26 +17,5 @@ namespace Pricebook.Database {
     public string FAX { get; set; }
     public string EMAIL { get; set; }
 
-    private string SQL() {
-      return @"
-Select 
-CUSTNO,
-COMPANYNM,
-ADDRESS1,
-CITY,
-STATE,
-Zip,
-PERSON,
-PHONE,
-FAX,
-EMAIL
-From ARCUST
-WHERE 
-ARCUST.INACTIVETF = 0
-AND
-ISNUMERIC(CUSTNO) = 1
-";
-    }
-
   }
 }

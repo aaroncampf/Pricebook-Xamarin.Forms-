@@ -6,7 +6,7 @@
 
 
 	<StackLayout>
-		<dg:DataGrid x:Name="gridCustomers" ItemsSource="{Binding ARCUSTs}" SelectionEnabled="True" ItemSelected="gridCustomers_ItemSelected">
+		<dg:DataGrid x:Name="gridCustomers" SelectionEnabled="True" ItemSelected="gridCustomers_ItemSelected">
 			<dg:DataGrid.Columns>
 				<dg:DataGridColumn Title="CUSTNO" PropertyName="CUSTNO" Width="65" x:Name="Test" />
 				<dg:DataGridColumn Title="COMPANYNM" PropertyName="COMPANYNM" Width="*" />

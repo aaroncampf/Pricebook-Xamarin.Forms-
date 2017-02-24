@@ -44,58 +44,5 @@ namespace Pricebook.Database {
     public string SELL_CALC7 { get; set; }
     public string SELL_CALC8 { get; set; }
     public string SELL_CALC9 { get; set; }
-
-
-    public static string SQLQuery() {
-      return @"
-SELECT 
-[ITEMNO]
-,[CATG]
-,[GROUP]
-,[SUPERGROUP]
-,[DESCRIP]
-,[DESCRIP2]
-,[DESCRIP3]
-,[W_AVG_COST]
-,[LINECOST]
-,[DEADNET]
-,[LOADEDCOST]
-,[ONORDER]
-,[ORDERQTY]
-,[VENDORID]
-,[VENDORITEM]
-,[DELIV_DAYS]
-,[DAYS_OH]
-,[FLAG_PDAYS]
-,[LASTDATE]
-,[BACKORDTF]
-,[WHSE_LOC]
-,[WHSE_BIN]
-,[RTDESC1]
-,[RTDESC2]
-,[SELLROUND]
-,[SELLUOM]
-,[BUY_UOM]
-,[ITEMSTATUS]
-,[PRBK_SEQ]
-,[SELL_CALC1]
-,[SELL_CALC2]
-,[SELL_CALC3]
-,[SELL_CALC4]
-,[SELL_CALC5]
-,[SELL_CALC6]
-,[SELL_CALC7]
-,[SELL_CALC8]
-,[SELL_CALC9]
-FROM [AJP].[dbo].[INVMAS]
-WHERE 
-DO_NOT_USE = 0
-AND
-ISNUMERIC(ITEMNO) = 1
-";
-    }
-
-
-
   }
 }

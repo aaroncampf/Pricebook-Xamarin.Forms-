@@ -38,7 +38,5 @@ namespace Pricebook.Views {
         Cache.Add(item);
       }
     }
-
-
   }
 }

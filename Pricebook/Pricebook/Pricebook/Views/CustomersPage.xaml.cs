@@ -17,24 +17,25 @@ namespace Pricebook.Views {
 
     public CustomersPage() {
       InitializeComponent();
-      this.BindingContext = this;
       Xamarin.Forms.DataGrid.DataGridComponent.Init();
-
-      RefreshData();
     }
 
     public void RefreshData() {
       ARCUSTs_Full.Clear();
       ARCUSTs.Clear();
+      ORDERFRM_Plus_Data.Clear();
+      gridCustomers.ItemsSource = null;
+
       foreach (var item in new CsvHelper.CsvReader(new System.IO.StringReader(TabsPage.XML.Element("ARCUST").Value)).GetRecords<Database.ARCUST>()) {
         ARCUSTs_Full.Add(item);
         ARCUSTs.Add(item);
       }
 
-      ORDERFRM_Plus_Data.Clear();
       foreach (var item in new CsvHelper.CsvReader(new System.IO.StringReader(TabsPage.XML.Element("ORDERFRM_Plus").Value)).GetRecords<Database.ORDERFRM_Plus>()) {
         ORDERFRM_Plus_Data.Add(item);
       }
+
+      gridCustomers.ItemsSource = ARCUSTs;
     }
 
     private void gridCustomers_ItemSelected(object sender, SelectedItemChangedEventArgs e) {

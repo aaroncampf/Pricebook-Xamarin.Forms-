@@ -15,28 +15,5 @@ namespace Pricebook.Database {
     public string DESCRIP { get; set; }
     public string DESCRIP2 { get; set; }
     public string DESCRIP3 { get; set; }
-
-
-    private string SQL() {
-      return @"
-SELECT
-ORDERFRM.ITEMNO, 
-ORDERFRM.SHIPCUSTNO, 
-ORDERFRM.LastSellNetnet, 
-ORDERFRM.EntryDate, 
-INVMAS.CATG, 
-INVMAS.[GROUP], 
-INVMAS.DESCRIP, 
-INVMAS.DESCRIP2, 
-INVMAS.DESCRIP3
-FROM
-ORDERFRM INNER JOIN
-	INVMAS ON ORDERFRM.ITEMNO = INVMAS.ITEMNO
-
-WHERE ISNUMERIC(ORDERFRM.ITEMNO) = 1
-";
-    }
-
-
   }
 }

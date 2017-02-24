@@ -8,15 +8,5 @@ namespace Pricebook.Database {
   public class INVGROUP {
     public string GROUP { get; set; }
     public string DESCRIP { get; set; }
-    
-    private static string SQL() {
-      return @"
-SELECT 
-[GROUP],
-[CATG],
-[DESCRIP]
-FROM [AJP].[dbo].[INVGROUP]
-";
-    }
   }
 }
