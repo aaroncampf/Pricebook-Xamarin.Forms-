@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Pricebook.Database;
 using Xamarin.Forms;
 using System.Collections.ObjectModel;
@@ -30,16 +27,18 @@ namespace Pricebook.Views {
                         ";
 
       foreach (var item in OrderformData.Where(x => x.SHIPCUSTNO == SelectedCustomer.CUSTNO)) {
-        htmlSource.Html += $@"
-          <h3>{item.DESCRIP}</h3>
-          <p>LastSellNetnet: {item.LastSellNetnet}</p>
-          <p>EntryDate: {item.EntryDate}</p>
-          <p>Category: {item.CATG}</p>
-          <p>Group: {item.GROUP}</p>
-          <p>DESCRIP2: {item.DESCRIP2}</p>
-          <p>DESCRIP3: {item.DESCRIP3}</p>
-        ";
+        htmlSource.Html += $"<h3>{item.DESCRIP}</h3>";
+
+        if (!string.IsNullOrEmpty(item.DESCRIP2))
+          htmlSource.Html += $"<p>DESCRIP2: {item.DESCRIP2}</p>";
+        if (!string.IsNullOrEmpty(item.DESCRIP3))
+          htmlSource.Html += $"<p>DESCRIP3: {item.DESCRIP3}</p>";
+        if (item.LastSellNetnet != "0.0")
+          htmlSource.Html += $"<p>LastSellNetnet: {item.LastSellNetnet}</p>";
+        if (item.EntryDate != "")
+          htmlSource.Html += $"<p> EntryDate: {DateTime.Parse(item.EntryDate):D}</p>";
       }
+
       webMain.Source = htmlSource;
     }
   }

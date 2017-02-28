@@ -1,29 +1,27 @@
-# Pricebook-Xamarin.Forms-
+Pricebook-Xamarin.Forms-
 An Android price book for AJP Northwest created using C#, Xamarin.Forms, Dropbox.Api and CsvHelper.
 
-## Overview
+# Overview
 
 
-## Disclaimer
+# Disclaimer
 This was built for AJP Northwest and uploaded with permission in return a free prototype.
 
 
-## Pricebook Tab
+# Pricebook Tab
 Displays all records in the pricebook (table&nbsp;&nbsp;&nbsp; INVMAS)
 
-### Filtering
+## Filtering
 * By String
 * By Vendor
 * By Customer
 
-## Customers Tab
+# Customers Tab
 
-### Filtering
+## Filtering
 * By String
 
-## 
-
-## Data
+# Data
 Data comes from the AJP application Join Data Uploader which uploads data onto Dropbox where each application is treated as a service and gets a single file uploaded just for it to use.
 The file is an xml file with the following structure 
 
