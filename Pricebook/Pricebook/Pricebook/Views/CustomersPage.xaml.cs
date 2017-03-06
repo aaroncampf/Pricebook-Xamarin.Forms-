@@ -50,5 +50,24 @@ namespace Pricebook.Views {
         ARCUSTs.Add(item);
       }
     }
+
+    /*
+    protected override void OnAppearing() {
+      base.OnAppearing();
+
+      if (TabsPage.XML == null) {
+        Device.BeginInvokeOnMainThread(() => {
+          DisplayAlert("Error in Data", "Please manually refresh data", "Okay");
+        });
+      }
+      else if(!ARCUSTs_Full.Any()) {
+        RefreshData();
+      }
+
+      gridCustomers.HeightRequest.ToString();
+      gridCustomers.ToString();
+      layoutMain.ToString();
+    }
+    */
   }
 }

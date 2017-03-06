@@ -18,10 +18,10 @@ namespace Pricebook.Views {
     public static Func<System.Xml.Linq.XElement> GetXML { get; set; }
     /// <summary>An Action that updates the XML after the data is specified number of days old</summary>
     public static Action<int> UpdateXML { get; set; }
+    
+  #endregion
 
-    #endregion
-
-    public TabsPage() {
+  public TabsPage() {
       InitializeComponent();
       UpdateData(false);
     }
@@ -29,6 +29,7 @@ namespace Pricebook.Views {
     private void UpdateData(bool UpdateNow) {
       UpdateXML(UpdateNow ? 0 : 3);
       XML = GetXML();
+
 
       if (TabsPage.XML == null) {
         Device.BeginInvokeOnMainThread(() => {
@@ -39,6 +40,7 @@ namespace Pricebook.Views {
         pagePrices.RefreshData();
         pageCustomers.RefreshData();
       }
+
     }
 
     private void tbiUpdateManually_Clicked(object sender, EventArgs e) {

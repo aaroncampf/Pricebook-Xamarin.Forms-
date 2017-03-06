@@ -93,5 +93,20 @@ namespace Pricebook.Views {
     private void GridTest_ItemSelected(object sender, SelectedItemChangedEventArgs e) {
       Navigation.PushModalAsync(new ProductPage((Database.INVMAS)e.SelectedItem));
     }
+
+    /*
+    protected override void OnAppearing() {
+      base.OnAppearing();
+
+      if (TabsPage.XML == null) {
+        Device.BeginInvokeOnMainThread(() => {
+          DisplayAlert("Error in Data", "Please manually refresh data", "Okay");
+        });
+      }
+      else if (!INVMAS_Table_Full.Any()) {
+        RefreshData();
+      }  
+    }
+    */
   }
 }

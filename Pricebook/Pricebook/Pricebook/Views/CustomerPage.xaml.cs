@@ -28,6 +28,7 @@ namespace Pricebook.Views {
 
       foreach (var item in OrderformData.Where(x => x.SHIPCUSTNO == SelectedCustomer.CUSTNO)) {
         htmlSource.Html += $"<h3>{item.DESCRIP}</h3>";
+        htmlSource.Html += $"<p>ITEMNO: {item.ITEMNO}</p>";
 
         if (!string.IsNullOrEmpty(item.DESCRIP2))
           htmlSource.Html += $"<p>DESCRIP2: {item.DESCRIP2}</p>";

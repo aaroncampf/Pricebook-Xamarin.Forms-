@@ -41,6 +41,7 @@
     <Compile Include="Database\INVMAS.cs" />
     <Compile Include="Database\ORDERFRM_Plus.cs" />
     <Compile Include="Database\INVGROUP.cs" />
+    <Compile Include="Models\SpecialPrice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -157,9 +158,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Views\GetGroupFilter.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
